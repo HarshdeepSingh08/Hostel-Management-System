@@ -19,7 +19,13 @@ const About = () => {
       localStorage.removeItem('hasRedirectedAbout');
       navigate('/');
     }
+
+    const timeoutId = setTimeout(() => {
+      navigate('/');
+    }, 5000); 
+    return () => clearTimeout(timeoutId);
   }, [navigate]);
+
 
   return (
     <div>Redirecting...</div> 
