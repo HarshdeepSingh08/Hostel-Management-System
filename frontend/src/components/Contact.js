@@ -1,13 +1,30 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
-    window.location.href = 'https://www.iitrpr.ac.in/student-affairs/hostel.php';
-  }, []);
+    const hasRedirected = localStorage.getItem('hasRedirectedContact');
+
+    // If the user has not been redirected before
+    if (!hasRedirected) {
+      // Set the flag in localStorage to indicate redirection has happened
+      localStorage.setItem('hasRedirectedContact', 'true');
+
+      // Redirect to the external page
+      window.location.href = 'https://www.iitrpr.ac.in/student-affairs/hostel.php';
+    } else {
+      // If redirected before, navigate to the home page
+      navigate('/');
+    }
+  }, [navigate]);
 
   return (
-    <div>Redirecting...</div> // Optional: You can display a message while the redirection occurs
+    <div>Redirecting...</div> 
   );
-}
+};
 
 export default Contact;
+
+
