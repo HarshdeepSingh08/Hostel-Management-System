@@ -25,8 +25,8 @@ const NavbarComponent = () => {
       <Navbar.Collapse id="basic-navbar-nav" style={{ flexDirection: 'row-reverse', marginRight:'40px', fontSize:'larger' }}>
         <Nav>
           <Nav.Link as={Link} to="/home">Home</Nav.Link>
-          <Nav.Link as={Link} to="/about">About</Nav.Link>
-          <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+          {/* <Nav.Link as={Link} to="/about">About</Nav.Link> */}
+          {/* <Nav.Link as={Link} to="/contact">Contact</Nav.Link> */}
           <Nav.Link as={Link} to="/login">Login</Nav.Link>
         </Nav>
       </Navbar.Collapse>
