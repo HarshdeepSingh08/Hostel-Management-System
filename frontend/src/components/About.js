@@ -16,6 +16,7 @@ const About = () => {
       window.location.href = 'https://www.iitrpr.ac.in/about-iit-ropar';
     } else {
       // If redirected before, navigate to the home page
+      localStorage.removeItem('hasRedirectedAbout');
       navigate('/');
     }
   }, [navigate]);

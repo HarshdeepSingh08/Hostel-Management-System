@@ -16,7 +16,9 @@ const Contact = () => {
       window.location.href = 'https://www.iitrpr.ac.in/student-affairs/hostel.php';
     } else {
       // If redirected before, navigate to the home page
+      localStorage.removeItem('hasRedirectedContact');
       navigate('/');
+
     }
   }, [navigate]);
 
